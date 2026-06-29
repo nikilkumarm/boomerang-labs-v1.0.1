@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Playfair_Display, Inter } from 'next/font/google'
+import { Playfair_Display, Inter, Montserrat, Space_Grotesk, Comfortaa, Archivo_Black, Outfit } from 'next/font/google'
 import Image from 'next/image'
 import Link from 'next/link'
 import MobileMenuBtn from '@/components/MobileMenuBtn'
@@ -17,6 +17,41 @@ const inter = Inter({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600'],
   variable: '--font-inter',
+  display: 'swap',
+})
+
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800', '900'],
+  variable: '--font-montserrat',
+  display: 'swap',
+})
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-space',
+  display: 'swap',
+})
+
+const comfortaa = Comfortaa({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-comfortaa',
+  display: 'swap',
+})
+
+const archivoBlack = Archivo_Black({
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-archivo',
+  display: 'swap',
+})
+
+const outfit = Outfit({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800', '900'],
+  variable: '--font-outfit',
   display: 'swap',
 })
 
@@ -38,7 +73,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
+    <html lang="en" className={`${playfair.variable} ${inter.variable} ${montserrat.variable} ${spaceGrotesk.variable} ${comfortaa.variable} ${archivoBlack.variable} ${outfit.variable}`}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -50,7 +85,7 @@ export default function RootLayout({
             <div className="header-left">
               <Link href="/" className="brand">
                 <Image
-                  src="/logo.png"
+                  src="/logo.webp"
                   alt="Boomerang Labs"
                   width={360}
                   height={120}
@@ -62,7 +97,6 @@ export default function RootLayout({
 
             <nav className="header-nav">
               <Link href="/company" className="nav-link">Company</Link>
-              <Link href="/proposal" className="nav-link">Proposal</Link>
               <Link href="/strategy" className="nav-link">Strategy</Link>
               <Link href="/portfolio" className="nav-link">Portfolio</Link>
               <Link href="/blog" className="nav-link">Blog</Link>
@@ -81,7 +115,7 @@ export default function RootLayout({
                   <polyline points="7 7 17 7 17 17"></polyline>
                 </svg>
               </Link>
-              
+
               <MobileMenuBtn />
             </div>
           </header>
@@ -92,7 +126,7 @@ export default function RootLayout({
             <div className="footer-top">
               <div className="footer-logo">
                 <Image
-                  src="/logo.png"
+                  src="/logo.webp"
                   alt="Boomerang Labs"
                   width={110}
                   height={35}
@@ -103,10 +137,9 @@ export default function RootLayout({
                   <a href="mailto:hello@boomeranglabs.in">hello@boomeranglabs.in</a>
                 </div>
               </div>
-              
+
               <nav className="footer-nav">
                 <Link href="/company" className="footer-link">Company</Link>
-                <Link href="/proposal" className="footer-link">Proposal</Link>
                 <Link href="/strategy" className="footer-link">Strategy</Link>
                 <Link href="/portfolio" className="footer-link">Portfolio</Link>
                 <Link href="/blog" className="footer-link">Blog</Link>
@@ -120,7 +153,7 @@ export default function RootLayout({
                 </a>
                 <a href="mailto:hello@boomeranglabs.in" className="social-link" aria-label="Gmail">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/>
+                    <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z" />
                   </svg>
                 </a>
               </div>

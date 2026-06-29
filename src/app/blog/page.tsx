@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
+import { Breadcrumb } from '@/components/ui/breadcrumb'
 
 export default function BlogPage() {
   const [activeCategory, setActiveCategory] = useState('all')
@@ -46,7 +47,7 @@ export default function BlogPage() {
   return (
     <>
       <section className="section subpage-hero">
-        <span className="section-tag">04 / Studio Insights & Perspectives</span>
+        <Breadcrumb currentPage="Blog" />
         <h1 className="subpage-title">Perspectives on camera direction, studio lighting, and digital culture.</h1>
         <p className="subpage-lead">We write about technical lens configurations, advanced strobe setups, model directing, and the post-production pipelines behind commercial captures.</p>
       </section>

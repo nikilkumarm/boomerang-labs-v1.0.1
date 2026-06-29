@@ -2,20 +2,21 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
+import { Breadcrumb } from '@/components/ui/breadcrumb'
 
 export default function StrategyPage() {
   return (
     <>
       <section className="section subpage-hero strategy-hero">
         <div className="subpage-hero-left">
-          <span className="section-tag">02 / Production Process</span>
-          <h1 className="subpage-title">A rigorous production workflow designed to return compounded visual value.</h1>
-          <p className="subpage-lead">We combine exact camera science, meticulous set lighting, and high-fidelity retouching into a comprehensive studio framework.</p>
+          <Breadcrumb currentPage="Strategy" />
+          <h1 className="subpage-title">A production workflow built to return compounded visual value.</h1>
+          <p className="subpage-lead">Camera science, precision lighting, and high-fidelity studio framework.</p>
         </div>
         <div className="subpage-hero-right">
           <div className="subpage-hero-image-wrapper">
             <Image
-              src="/images/img-d.jpeg"
+              src="/images/img-d.webp"
               alt="Camera Production"
               fill
               className="subpage-hero-image"
@@ -71,16 +72,19 @@ export default function StrategyPage() {
         <div className="editorial-grid">
           <div className="editorial-left">
             <h2 className="editorial-lead">
-              Our studio production acts like a boomerang. You send us your strategic campaign requirements, and our camera execution returns finished premium visual libraries.
+              Our studio production acts like a <strong>boomerang.</strong> You send us your strategic campaign requirements, and our camera execution returns finished premium visual libraries.
             </h2>
           </div>
           <div className="editorial-right">
-            <p>
-              We believe a beautiful photograph is only as good as its commercial alignment. We bridges the gap that traditionally exists between high-concept fashion aesthetics and high-volume commercial assets.
-            </p>
-            <p>
-              By aligning designers, styling directors, and camera operators from Day One, we eliminate set friction and accelerate asset timelines while retaining absolute visual fidelity across every single shot.
-            </p>
+            <div className="editorial-logo-wrap">
+              <Image
+                src="/images/bl-approvel-logo-2.webp"
+                alt="Boomerang Labs Visual Rights Badge"
+                width={320}
+                height={200}
+                className="editorial-logo-img"
+              />
+            </div>
           </div>
         </div>
       </section>

@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
+import { Breadcrumb } from '@/components/ui/breadcrumb'
 
 export default function PortfolioPage() {
   const [filter, setFilter] = useState('all')
@@ -13,7 +14,7 @@ export default function PortfolioPage() {
       title: 'Aethera Fashion Editorial',
       category: 'fashion',
       categoryLabel: 'Fashion / Model Lookbook',
-      image: '/images/img-b.jpeg',
+      image: '/images/img-b.webp',
       desc: 'Bespoke apparel lookbook, on-location fashion storytelling, and model lookbook systems for an active streetwear line.'
     },
     {
@@ -21,7 +22,7 @@ export default function PortfolioPage() {
       title: 'Vertex Commercial Catalog',
       category: 'product',
       categoryLabel: 'Product / E-Commerce',
-      image: '/images/img-c.jpeg',
+      image: '/images/img-c.webp',
       desc: 'High-volume product photography with uniform studio set parameters, shadow casting, and master color matching.'
     },
     {
@@ -29,7 +30,7 @@ export default function PortfolioPage() {
       title: 'Aura Summit Corporate Event',
       category: 'event',
       categoryLabel: 'Corporate / Live Events',
-      image: '/images/img-d.jpeg',
+      image: '/images/img-d.webp',
       desc: 'Dynamic live event coverage, speaker keynote headshots, conference visual packages, and high-energy summary reels.'
     }
   ]
@@ -41,7 +42,7 @@ export default function PortfolioPage() {
   return (
     <>
       <section className="section subpage-hero">
-        <span className="section-tag">03 / Selected Studio Works</span>
+        <Breadcrumb currentPage="Portfolio" />
         <h1 className="subpage-title">Capturing commercial presence with light and art direction.</h1>
         <p className="subpage-lead">Explore our latest visual productions spanning high-fashion lookbooks, sharp e-commerce product catalogs, and corporate event productions.</p>
       </section>
