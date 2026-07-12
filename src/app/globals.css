@@ -11,41 +11,36 @@
 }
 
 :root {
-  --background: #f3f3f3;
-  --foreground: #111111;
-  --gray-text: #888888;
-  --lime-green: #0e2e90;
+  --background: #F8F9FB;
+  --foreground: #08152E;
 
-  /* shadcn variables */
+  --pure-white: #FFFFFF;
+  --primary-navy: #041A4D;
+  --accent-blue: #2E6BFF;
+  --electric-glow: #4D7FFF;
+  --secondary-text: #5E6678;
+
+  /* shadcn/ui fallback variables */
   --muted: #f1f5f9;
-  --muted-foreground: #64748b;
+  --muted-foreground: var(--secondary-text);
   --border: #e2e8f0;
   --input: #e2e8f0;
-  --ring: #0f172a;
+  --ring: var(--accent-blue);
 }
 
-body {
+body, html {
   background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-inter), sans-serif;
   margin: 0;
-  padding: 12px 32px 32px 32px;
-  /* Surrounding layout gap, minimized at the top */
+  padding: 0;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  width: 100%;
+  overflow-x: hidden;
 }
 
-.container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 16px 80px 80px 80px;
-  /* Generous padding on sides and bottom, compact at the top */
-  min-height: calc(100vh - 44px);
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-  background-color: transparent;
-}
+/* Additional global resets */
 
 /* Header */
 .header {
@@ -713,7 +708,6 @@ html {
    LANDING PAGE SECTIONS
    ========================================= */
 
-/* Section Base */
 .section {
   padding: 100px 0;
   border-top: 1px solid rgba(0, 0, 0, 0.08);
@@ -1018,6 +1012,8 @@ html {
 
 .form-group input,
 .form-group textarea {
+  width: 100%;
+  box-sizing: border-box;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 14px 18px;
@@ -1273,6 +1269,12 @@ html {
   align-items: stretch;
 }
 
+@media (max-width: 768px) {
+  .proposal-bento-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .proposal-bento-left {
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 20px;
@@ -1309,6 +1311,13 @@ html {
   gap: 32px;
 }
 
+@media (max-width: 640px) {
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
 .value-card {
   background: rgba(255, 255, 255, 0.5);
   border: 1px solid rgba(0, 0, 0, 0.05);
@@ -1338,6 +1347,13 @@ html {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
+}
+
+@media (max-width: 640px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
 }
 
 .team-member {
@@ -1879,6 +1895,8 @@ html {
    ========================================= */
 
 .custom-select {
+  width: 100%;
+  box-sizing: border-box;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 14px 18px;
@@ -3117,7 +3135,7 @@ html {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 380px;
+  width: min(380px, 90vw);
   background: linear-gradient(135deg, rgba(15, 15, 15, 0.85) 0%, rgba(15, 15, 15, 0.6) 100%);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
@@ -3362,7 +3380,7 @@ html {
 }
 
 .cta-heading {
-  font-size: 36px;
+  font-size: clamp(22px, 4vw, 36px);
   font-weight: 500;
   color: #ffffff;
   margin: 0;
@@ -3402,7 +3420,9 @@ html {
 
 /* Prevent horizontal scroll site-wide */
 @media (max-width: 1024px) {
-  html, body {
+
+  html,
+  body {
     overflow-x: hidden;
   }
 
@@ -3527,5 +3547,454 @@ html {
 
   .footer-nav {
     gap: 12px;
+  }
+}
+
+/* =========================================
+   CONSOLIDATED RESPONSIVE OVERHAUL
+   Fixes remaining gaps across all pages
+   ========================================= */
+
+/* --- Global: prevent any media from overflowing its container --- */
+img,
+video,
+iframe,
+embed {
+  max-width: 100%;
+}
+
+/* --- Strategy: editorial logo-wrap margin on tablet/mobile --- */
+@media (max-width: 1024px) {
+  .editorial-logo-wrap {
+    margin-right: 0;
+    justify-content: flex-start;
+  }
+
+  .editorial-logo-img {
+    max-width: 240px;
+  }
+}
+
+@media (max-width: 768px) {
+  .editorial-logo-wrap {
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  /* Strategy hero image: cap height so it doesn't dominate the viewport */
+  .subpage-hero-image-wrapper {
+    aspect-ratio: 16/9;
+    max-height: 280px;
+  }
+
+  /* Fan container: explicit height instead of relying on scale() */
+  .fan-container {
+    height: 380px;
+    max-width: 100%;
+  }
+
+  .card-left,
+  .card-right {
+    width: 160px;
+    height: 210px;
+  }
+
+  .card-center {
+    width: 180px;
+    height: 240px;
+  }
+
+  /* Subpage lead: full width on mobile */
+  .subpage-lead {
+    max-width: 100%;
+  }
+
+  /* Contact box: reduce padding on mobile */
+  .contact-box {
+    padding: 32px 24px;
+    gap: 32px;
+  }
+
+  /* CTA box: reduce padding on mobile */
+  .cta-box {
+    padding: 40px 28px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  /* Values & team grids: fully single column on phones */
+  .values-grid,
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  /* Value card & team member: reduce padding */
+  .value-card {
+    padding: 28px 20px;
+  }
+
+  /* Fan glass panel: tighter padding on tiny screens */
+  .fan-glass-panel {
+    padding: 16px 12px;
+    border-radius: 16px;
+  }
+
+  .fan-item-desc {
+    max-width: 160px;
+  }
+
+  /* Fan main title */
+  .fan-main-title {
+    font-size: clamp(28px, 9vw, 48px);
+  }
+
+  /* Editorial grid: reduce gap */
+  .editorial-grid {
+    gap: 32px;
+  }
+
+  /* Phase cards: full single column */
+  .phase-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Phase card reduced height on mobile */
+  .phase-card {
+    min-height: 280px;
+  }
+
+  /* Contact box: stack cleanly */
+  .contact-box {
+    padding: 28px 16px;
+    border-radius: 24px;
+  }
+
+  /* Contact heading font size */
+  .contact-heading {
+    font-size: clamp(22px, 6vw, 32px);
+  }
+
+  /* Hub card: no horizontal margin on very small screens */
+  .hub-info {
+    margin: 0 12px;
+  }
+
+  /* Hub card: reduce padding */
+  .hub-card {
+    padding: 24px 16px;
+  }
+
+  /* CTA box: fully centered */
+  .cta-box {
+    padding: 32px 20px;
+    gap: 24px;
+    text-align: center;
+    align-items: center;
+  }
+
+  /* Blog item title */
+  .blog-title {
+    font-size: 18px;
+  }
+
+  /* Strategy card */
+  .strategy-card {
+    padding: 28px 20px;
+    border-radius: 16px;
+  }
+
+  /* Section tag */
+  .section-tag {
+    font-size: 10px;
+  }
+
+  /* Portfolio grid: single column already, just reduce gap */
+  .portfolio-grid {
+    gap: 20px;
+  }
+
+  /* Portfolio image: slightly smaller radius */
+  .portfolio-img-wrapper {
+    border-radius: 16px;
+  }
+}
+
+/* =========================================
+   HUB PERSPECTIVE CARD SECTION
+   ========================================= */
+
+.hub-perspective-section {
+  padding: clamp(40px, 4vw, 80px) 0 clamp(60px, 5vw, 100px);
+  /* clip-path lets outer cards bleed to the viewport edge without a scrollbar */
+  overflow-x: clip;
+}
+
+/* ---- Header ---- */
+.hub-perspective-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto clamp(32px, 3vw, 48px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hub-perspective-tag {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--lime-green);
+  display: block;
+  margin-bottom: 16px;
+}
+
+.hub-perspective-heading {
+  font-size: clamp(28px, 4vw, 52px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin: 0 0 20px 0;
+  color: var(--foreground);
+}
+
+.hub-perspective-desc {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--gray-text);
+  max-width: 520px;
+  margin: 0 0 28px 0;
+}
+
+/* CTA button — pill with circle arrow */
+.hub-perspective-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  padding: 8px 8px 8px 20px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--foreground);
+  background: transparent;
+  transition: all 0.25s ease;
+}
+
+.hub-perspective-cta:hover {
+  border-color: var(--foreground);
+  background: var(--foreground);
+  color: var(--background);
+}
+
+.hub-perspective-cta:hover .hub-cta-circle {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.hub-cta-circle {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #ff6000;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+/* =========================================
+   CONVEX PHONE CAROUSEL SECTION (GOD MODE)
+   ========================================= */
+
+.mc-carousel-section {
+  padding: 60px 0 100px;
+  background: transparent;
+  /* Let the site pattern show through */
+  overflow: hidden;
+  font-family: var(--font-outfit), sans-serif;
+  margin-top: 40px;
+}
+
+.mc-stage {
+  position: relative;
+  width: 100vw;
+  height: 800px;
+  perspective: 2500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: calc(-50vw + 50%);
+}
+
+.mc-phone-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 332px;
+  height: 672px;
+  /* Dark titanium metallic outer band */
+  border: 4px solid #5a5a5c;
+  border-radius: 52px;
+  z-index: 100;
+  pointer-events: none;
+  box-shadow:
+    0 0 0 1px #111,
+    /* Subtle outer black line */
+    inset 0 0 0 12px #0a0a0a,
+    /* Deep black inner screen bezel */
+    0 40px 80px rgba(0, 0, 0, 0.4);
+  /* Floor drop shadow */
+  box-sizing: border-box;
+}
+
+/* Speaker slit on the top metallic edge */
+.mc-phone-speaker {
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 4px;
+  background: #000;
+  border-radius: 0 0 4px 4px;
+  z-index: 102;
+}
+
+.mc-phone-island {
+  position: absolute;
+  top: 14px;
+  /* Flush with the inner screen bezel */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 30px;
+  background: #0a0a0a;
+  border-radius: 15px;
+  z-index: 101;
+}
+
+.mc-phone-home-bar {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 2px;
+  z-index: 101;
+}
+
+/* Physical Side Buttons for iPhone UI (Metallic) */
+.mc-phone-btn-silent {
+  position: absolute;
+  top: 100px;
+  left: -7px;
+  width: 3px;
+  height: 24px;
+  background: linear-gradient(to right, #333, #666);
+  border-radius: 3px 0 0 3px;
+  box-shadow: inset 1px 0 1px rgba(255, 255, 255, 0.4);
+}
+
+.mc-phone-btn-vol-up {
+  position: absolute;
+  top: 140px;
+  left: -7px;
+  width: 3px;
+  height: 50px;
+  background: linear-gradient(to right, #333, #666);
+  border-radius: 3px 0 0 3px;
+  box-shadow: inset 1px 0 1px rgba(255, 255, 255, 0.4);
+}
+
+.mc-phone-btn-vol-down {
+  position: absolute;
+  top: 200px;
+  left: -7px;
+  width: 3px;
+  height: 50px;
+  background: linear-gradient(to right, #333, #666);
+  border-radius: 3px 0 0 3px;
+  box-shadow: inset 1px 0 1px rgba(255, 255, 255, 0.4);
+}
+
+.mc-phone-btn-power {
+  position: absolute;
+  top: 160px;
+  right: -7px;
+  width: 3px;
+  height: 80px;
+  background: linear-gradient(to left, #333, #666);
+  border-radius: 0 3px 3px 0;
+  box-shadow: inset -1px 0 1px rgba(255, 255, 255, 0.4);
+}
+
+.mc-cylinder {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  /* Transform is now driven inline by React state for the step-and-hold effect */
+  /* Smoothly transition between each 20-degree snap */
+  transition: transform 2.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.mc-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* True iPhone 15 Pro proportions inside the bezel */
+  width: 300px;
+  height: 640px;
+  margin-left: -150px;
+  margin-top: -320px;
+  border-radius: 34px;
+  /* Matches the inner border-radius of the phone perfectly */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  backface-visibility: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  will-change: transform;
+}
+
+.mc-card-img-wrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.mc-card-img {
+  object-fit: cover;
+}
+
+.mc-stage:hover .mc-cylinder {
+  animation-play-state: paused;
+}
+
+/* Responsive Scaling */
+@media (max-width: 1024px) {
+  .mc-stage {
+    transform: scale(0.85);
+  }
+}
+
+@media (max-width: 768px) {
+  .mc-stage {
+    transform: scale(0.65);
+  }
+}
+
+@media (max-width: 480px) {
+  .mc-stage {
+    transform: scale(0.5);
   }
 }

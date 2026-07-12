@@ -29,10 +29,9 @@ export function TestimonialsMinimal() {
 
   return (
     <div className="w-full max-w-2xl mx-auto px-6 py-16">
-      {/* Title Section */}
       <div className="mb-16 text-center">
-        <h2 className="text-3xl md:text-4xl font-normal tracking-tight text-foreground">
-          Trusted by <span className="font-bold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">Creators & Brands</span>
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tighter leading-tight text-slate-900 whitespace-nowrap">
+          Trusted by <span className="font-bold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent pr-2">Creators & Brands.</span>
         </h2>
       </div>
 
@@ -42,7 +41,7 @@ export function TestimonialsMinimal() {
           <p
             key={i}
             className={`
-              absolute inset-0 text-lg md:text-xl font-normal leading-relaxed text-foreground
+              absolute inset-0 text-lg md:text-xl font-normal leading-relaxed text-slate-900
               transition-all duration-500 ease-out
               ${active === i
                 ? "opacity-100 translate-y-0 blur-0"
@@ -88,8 +87,8 @@ export function TestimonialsMinimal() {
                 ${active === i ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-2 pointer-events-none"}
               `}
             >
-              <span className="text-sm font-medium text-foreground">{t.name}</span>
-              <span className="text-xs text-muted-foreground">{t.role}</span>
+              <span className="text-sm font-medium text-slate-900">{t.name}</span>
+              <span className="text-xs text-slate-500">{t.role}</span>
             </div>
           ))}
         </div>

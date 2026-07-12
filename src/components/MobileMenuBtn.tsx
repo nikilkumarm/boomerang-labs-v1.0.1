@@ -50,8 +50,8 @@ export default function MobileMenuBtn() {
         <nav className="mobile-menu-links">
           <Link href="/company" onClick={() => setIsOpen(false)}>Company</Link>
           <Link href="/strategy" onClick={() => setIsOpen(false)}>Strategy</Link>
-          <Link href="/portfolio" onClick={() => setIsOpen(false)}>Portfolio</Link>
-          <Link href="/blog" onClick={() => setIsOpen(false)}>Blog</Link>
+          <Link href="/photography" onClick={() => setIsOpen(false)}>Photography</Link>
+          <Link href="/production" onClick={() => setIsOpen(false)}>Production</Link>
           <Link href="/contact" onClick={() => setIsOpen(false)} className="mobile-menu-contact">Get In Touch</Link>
         </nav>
       </div>
