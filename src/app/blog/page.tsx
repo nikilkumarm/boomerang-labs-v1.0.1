@@ -11,7 +11,7 @@ export default function EditorialBlogPage() {
     <main className="min-h-screen text-slate-900 font-sans selection:bg-slate-900 selection:text-white">
 
       {/* 1. EDITORIAL HERO */}
-      <section className="w-full pt-40 pb-20 px-6 md:px-12 max-w-[1600px] mx-auto flex flex-col md:flex-row justify-between items-end gap-12 border-b border-slate-300">
+      <section className="w-full pt-40 pb-20 px-6 md:px-12 max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-end gap-12 border-b border-slate-300">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -39,7 +39,7 @@ export default function EditorialBlogPage() {
         </motion.div>
       </section>
 
-      <section className="w-full max-w-[1600px] mx-auto px-6 md:px-12 py-32">
+      <section className="w-full max-w-[1200px] mx-auto px-6 md:px-12 py-32">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-16 items-start">
 
           {/* Feature 1: Podcasts */}

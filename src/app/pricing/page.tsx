@@ -12,13 +12,13 @@ import { ArrowRight } from 'lucide-react'
 type ServiceTab = 'video' | 'photo' | 'graphic' | 'podcast'
 
 export default function PricingPage() {
-  const [activeService, setActiveService] = useState<ServiceTab>('video')
+  const [activeService, setActiveService] = useState<ServiceTab>('photo')
 
   return (
     <main className="min-h-screen bg-[#FAFAFA] text-slate-900 font-sans selection:bg-blue-600 selection:text-white pt-40 pb-20">
       
       {/* 1. HERO SECTION */}
-      <section className="w-full max-w-[1400px] mx-auto px-6 md:px-12 flex flex-col items-center text-center mb-20">
+      <section className="w-full max-w-[1200px] mx-auto px-6 md:px-12 flex flex-col items-center text-center mb-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -38,12 +38,12 @@ export default function PricingPage() {
       </section>
 
       {/* 2. MASTER TABS */}
-      <section className="w-full max-w-[1400px] mx-auto px-6 md:px-12 mb-12 flex flex-col items-center">
+      <section className="w-full max-w-[1200px] mx-auto px-6 md:px-12 mb-12 flex flex-col items-center">
         <div className="inline-flex bg-white p-1.5 rounded-full shadow-[0_0_0_1px_rgba(0,0,0,0.05),0_2px_15px_rgba(0,0,0,0.03)] border border-slate-100 overflow-x-auto max-w-full">
           {[
-            { id: 'video', label: 'Video Editing' },
+            // { id: 'video', label: 'Video Editing' },
             { id: 'photo', label: 'Photography' },
-            { id: 'graphic', label: 'Graphic Design' },
+            // { id: 'graphic', label: 'Graphic Design' },
             { id: 'podcast', label: 'Podcasts' },
           ].map((tab) => (
             <button
@@ -85,7 +85,7 @@ export default function PricingPage() {
       </section>
 
       {/* 4. UNIFIED CTA */}
-      <section className="w-full max-w-[1400px] mx-auto pt-20 pb-10 border-t border-slate-200 mt-20 flex flex-col items-center text-center px-6 md:px-12">
+      <section className="w-full max-w-[1200px] mx-auto pt-20 pb-10 border-t border-slate-200 mt-20 flex flex-col items-center text-center px-6 md:px-12">
         <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-[4rem] font-medium tracking-tighter leading-tight mb-8 max-w-none text-slate-900">
           Ready to <span className="italic font-serif bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent bg-clip-text pr-2">Build Your Brand?</span>
         </h2>

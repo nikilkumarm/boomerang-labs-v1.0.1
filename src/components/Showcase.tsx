@@ -18,7 +18,7 @@ export default function Showcase() {
   ]
 
   return (
-    <section className="relative w-full bg-transparent flex flex-col items-center z-30 py-24 md:py-32 overflow-hidden">
+    <section className="relative w-full bg-transparent flex flex-col items-center z-30 py-48 md:py-64 overflow-hidden">
       {/* Title / Intro */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}

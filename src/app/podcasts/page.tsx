@@ -12,7 +12,7 @@ export default function EditorialPodcastsPage() {
     <main className="min-h-screen text-slate-900 font-sans selection:bg-slate-900 selection:text-white">
 
       {/* 1. EDITORIAL HERO */}
-      <section className="w-full pt-40 pb-20 px-6 md:px-12 max-w-[1600px] mx-auto flex flex-col lg:flex-row justify-between items-end gap-12 border-b border-slate-300">
+      <section className="w-full pt-40 pb-20 px-6 md:px-12 max-w-[1200px] mx-auto flex flex-col lg:flex-row justify-between items-end gap-12 border-b border-slate-300">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -20,7 +20,7 @@ export default function EditorialPodcastsPage() {
           className="max-w-5xl"
         >
           <span className="bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent bg-clip-text py-1 px-2 text-xs font-bold tracking-[0.3em] uppercase mb-8 block">
-            Service — 01
+            Professional AV Production
           </span>
           <h1 className="text-5xl md:text-7xl lg:text-[9rem] font-medium tracking-tighter leading-[0.85] text-slate-900 mb-8 lg:mb-0">
             <span className="italic font-serif bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent bg-clip-text py-1 px-2">Podcasts</span>
@@ -40,7 +40,7 @@ export default function EditorialPodcastsPage() {
       </section>
 
       {/* 2. THE CAPABILITIES (MAGAZINE LAYOUT) */}
-      <section className="w-full max-w-[1600px] mx-auto px-6 md:px-12 py-24 flex flex-col gap-32">
+      <section className="w-full max-w-[1200px] mx-auto px-6 md:px-12 py-24 flex flex-col gap-32">
 
         {/* Hero Image */}
         <div className="w-full relative aspect-[21/9] overflow-hidden bg-gradient-to-br from-blue-600 to-cyan-500 group rounded-[2rem]">

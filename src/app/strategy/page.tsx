@@ -11,7 +11,7 @@ export default function EditorialStrategyPage() {
     <main className="min-h-screen text-slate-900 font-sans selection:bg-slate-900 selection:text-white">
 
       {/* 1. EDITORIAL HERO */}
-      <section className="w-full pt-40 pb-20 px-6 md:px-12 max-w-[1600px] mx-auto flex flex-col lg:flex-row justify-between items-end gap-12 border-b border-slate-300">
+      <section className="w-full pt-40 pb-20 px-6 md:px-12 max-w-[1200px] mx-auto flex flex-col lg:flex-row justify-between items-end gap-12 border-b border-slate-300">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -40,7 +40,7 @@ export default function EditorialStrategyPage() {
       </section>
 
       {/* 2. THE THREE PILLARS (MAGAZINE LAYOUT) */}
-      <section className="w-full max-w-[1600px] mx-auto px-6 md:px-12 py-24 flex flex-col gap-32">
+      <section className="w-full max-w-[1200px] mx-auto px-6 md:px-12 py-24 flex flex-col gap-32">
 
         {/* Phase 1 */}
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24 group">
@@ -132,7 +132,7 @@ export default function EditorialStrategyPage() {
       </section>
 
       {/* 3. CTA */}
-      <section className="w-full max-w-[1600px] mx-auto px-6 md:px-12 py-32 border-t border-slate-300 flex flex-col items-center text-center">
+      <section className="w-full max-w-[1200px] mx-auto px-6 md:px-12 py-32 border-t border-slate-300 flex flex-col items-center text-center">
         <h2 className="text-3xl md:text-5xl lg:text-[4rem] font-medium tracking-tighter leading-tight mb-8 max-w-3xl">
           The <span className="italic font-serif bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent bg-clip-text py-1 px-2">Boomerang</span> Effect.
         </h2>

@@ -251,7 +251,7 @@ export default function VideoEditingPricing({ hideHeader = false, hideCTA = fals
 
   return (
     <div className={`w-full bg-[#FAFAFA] text-slate-900 ${hideHeader ? 'pt-12' : 'pt-32'} pb-16 px-6 md:px-12 selection:bg-blue-600 selection:text-white`}>
-      <div className="max-w-[1400px] mx-auto">
+      <div className="max-w-[1200px] mx-auto">
         
         {/* Header */}
         {!hideHeader && (

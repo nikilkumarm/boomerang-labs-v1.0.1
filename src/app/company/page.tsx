@@ -46,117 +46,66 @@ export default function CompanyPage() {
 
   return (
     <div className={styles.pageWrapper}>
-      {/* Hero Section */}
-      <section className="relative pt-12 pb-16 lg:pt-20 lg:pb-24 px-6 overflow-hidden">
-        <div className="w-full max-w-[1440px] mx-auto px-6 md:px-12 xl:px-24">
-          <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 lg:gap-8 relative z-10">
-
+      {/* Unified Hero Section */}
+      <section className="relative pt-12 pb-16 lg:pt-20 lg:pb-32 overflow-hidden">
+        <div className="w-full max-w-[1200px] mx-auto px-8 md:px-16 xl:px-32">
+          <div className="flex flex-col lg:flex-row gap-16 lg:gap-12 items-center">
+            
             {/* Left Content */}
-            <div className="flex-1 flex flex-col justify-center max-w-2xl">
-              <Breadcrumb currentPage="Company" />
+            <div className="flex-1 lg:max-w-xl flex flex-col justify-center">
 
-              <h1 className="text-[2.75rem] sm:text-6xl lg:text-[4.5rem] text-[#0f172a] leading-[1.1] tracking-tight mb-8">
+              <h1 className="text-[2.75rem] sm:text-5xl lg:text-[4rem] text-[#0f172a] leading-[1.05] tracking-tight mb-6 mt-6">
                 <span className="block whitespace-nowrap font-medium text-[0.85em] mb-1">Your Trusted</span>
-                <span className="block whitespace-nowrap font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500 pr-2">Visual Partner.</span>
+                <span className="block font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500 pb-2">Visual Partner.</span>
               </h1>
 
-              <div className="inline-flex items-center gap-4 bg-white/80 backdrop-blur-md border border-gray-200/50 rounded-full p-2 pr-8 shadow-[0_4px_20px_rgb(0,0,0,0.03)] mt-4 w-fit hover:bg-white transition-colors duration-300">
-                <div className="flex -space-x-3">
-                  <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" className="w-10 h-10 rounded-full border-2 border-white object-cover" alt="Client avatar" />
-                  <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=100&q=80" className="w-10 h-10 rounded-full border-2 border-white object-cover" alt="Client avatar" />
-                  <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" className="w-10 h-10 rounded-full border-2 border-white object-cover" alt="Client avatar" />
-                  <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80" className="w-10 h-10 rounded-full border-2 border-white object-cover" alt="Client avatar" />
-                </div>
-                <p className="text-gray-600 font-medium text-sm md:text-base">
-                  Trusted by <span className="font-bold text-gray-900">50+ Creators.</span>
-                </p>
-              </div>
-            </div>
-
-            {/* Right Image */}
-            <div className="flex-1 relative mt-10 lg:mt-0 lg:pl-10">
-              <StackedCardHero title="Creative Production" subtitle="High-fidelity visual systems designed for the modern web." />
-
-              {/* Floating Action Button */}
-              <Link href="/contact" className="absolute -bottom-6 -left-6 lg:bottom-12 lg:-left-12 bg-slate-900 text-white font-bold tracking-widest uppercase text-sm py-5 px-10 shadow-2xl hover:bg-blue-600 transition-colors duration-300 z-20 flex items-center gap-4 group">
-                <span className="relative z-10">Let's Shoot Together</span>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="relative z-10 transition-transform group-hover:translate-x-1">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* About Section - Minimal & Awesome */}
-      <section className="py-32 max-w-7xl mx-auto px-6 relative">
-        <div className="w-full max-w-[1440px] mx-auto px-6 md:px-12 xl:px-24">
-          <div className="flex flex-col lg:flex-row gap-20 items-center">
-
-            {/* Left Content */}
-            <div className="flex-1 lg:max-w-xl">
-              <div className="flex items-center gap-4 mb-8">
-                <div className="w-12 h-px bg-slate-400"></div>
-                <span className="text-sm font-semibold tracking-widest text-slate-500 uppercase">Our Studio</span>
-              </div>
-
-              <h2 className="text-4xl md:text-5xl lg:text-6xl leading-[0.9] font-medium text-slate-900 tracking-tighter mb-8 whitespace-nowrap">
-                Turning <span className="font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500 pr-2">Vision.</span><br />
-                Into <span className="font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500 pr-2">Capture.</span>
-              </h2>
-
-              <p className="text-lg text-slate-600 leading-relaxed mb-12">
-                With years of hands-on experience in fashion lookbooks, editorial campaigns, and high-volume e-commerce catalogs, we empower brands to tell their story seamlessly, delivering high-fidelity assets built to last.
+              <p className="text-xl text-slate-600 leading-relaxed mb-10 max-w-lg">
+                We empower brands to tell their stories seamlessly through high-fidelity visual assets built to last.
               </p>
 
-              <div className="flex flex-col sm:flex-row sm:items-center gap-6 lg:gap-8 mt-4">
-                {/* Premium Button */}
-                <button className="group relative inline-flex items-center justify-center gap-3 bg-gradient-to-b from-gray-900 to-[#0a0a0a] text-white px-8 py-4 rounded-full font-medium transition-all duration-300 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.3)] hover:shadow-[0_8px_25px_-5px_rgba(59,130,246,0.3)] border border-gray-800 hover:border-blue-500/50 overflow-hidden">
-                  <span className="relative z-10">Explore Our Process</span>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="relative z-10 transition-transform duration-300 group-hover:translate-x-1">
-                    <path d="M5 12h14M12 5l7 7-7 7" />
-                  </svg>
-                  {/* Shimmer effect inside button */}
-                  <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:animate-shimmer z-0"></div>
-                </button>
-
-                {/* Premium Rating Badge */}
-                <div className="flex items-center gap-6">
-                  {/* Vertical Divider */}
-                  <div className="w-px h-10 bg-gray-200 hidden sm:block"></div>
-
-                  <div className="flex flex-col">
-                    <div className="flex gap-[3px] mb-1.5 drop-shadow-sm">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-6 lg:gap-8 mb-4">
+                {/* Social Proof Avatars (Now on Left) */}
+                <div className="inline-flex items-center gap-4 bg-white shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 rounded-full p-2 pr-6 h-14 w-fit whitespace-nowrap">
+                  <div className="flex -space-x-3">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" className="w-10 h-10 rounded-full border-2 border-white object-cover shadow-sm shrink-0" alt="Client avatar" />
+                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=100&q=80" className="w-10 h-10 rounded-full border-2 border-white object-cover shadow-sm shrink-0" alt="Client avatar" />
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" className="w-10 h-10 rounded-full border-2 border-white object-cover shadow-sm shrink-0" alt="Client avatar" />
+                  </div>
+                  <div className="flex flex-col gap-0.5 justify-center">
+                    <div className="flex gap-[3px]">
                       {[...Array(5)].map((_, i) => (
-                        <svg key={i} width="14" height="14" viewBox="0 0 24 24" fill="#fbbf24" stroke="#d97706" strokeWidth="0.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        <svg key={i} width="12" height="12" viewBox="0 0 24 24" fill="#fbbf24" className="shrink-0"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
                       ))}
                     </div>
-                    <div className="flex items-baseline gap-1.5">
-                      <span className="text-sm font-bold text-gray-900">4.9/5</span>
-                      <span className="text-[11px] font-semibold uppercase tracking-wider text-gray-500">Average Rating</span>
-                    </div>
+                    <span className="text-sm font-bold text-gray-900 leading-none whitespace-nowrap mt-[2px]">4.8/5 Rating</span>
                   </div>
                 </div>
+
+                <Link href="/contact" className="group relative inline-flex items-center justify-center gap-2 bg-gradient-to-b from-gray-900 to-[#0a0a0a] text-white px-8 h-14 text-sm rounded-full font-medium transition-all duration-300 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.3)] hover:shadow-[0_8px_25px_-5px_rgba(59,130,246,0.3)] border border-gray-800 hover:border-blue-500/50 overflow-hidden w-fit whitespace-nowrap">
+                  <span className="relative z-10 whitespace-nowrap">Let's Shoot Together</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="relative z-10 transition-transform duration-300 group-hover:translate-x-1 shrink-0">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                  <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:animate-shimmer z-0"></div>
+                </Link>
               </div>
             </div>
 
-            {/* Right Image Container - Clean & Minimal */}
+            {/* Right Image Container */}
             <div className="flex-1 w-full relative">
-              <div className="relative w-full aspect-[4/5] max-w-md mx-auto lg:ml-auto rounded-[2rem] overflow-hidden group">
+              <div className="relative w-full aspect-[4/5] max-w-md mx-auto lg:ml-auto rounded-[2rem] overflow-hidden group shadow-2xl">
                 <Image
                   src="/images/company_hero.webp"
                   alt="Company hero"
                   fill
-                  className="object-cover object-center bg-gray-100"
+                  className="object-cover object-center bg-gray-100 transition-transform duration-700 group-hover:scale-105"
                 />
-                {/* Subtle inner shadow for depth */}
                 <div className="absolute inset-0 border border-black/5 rounded-[2rem] pointer-events-none"></div>
 
                 {/* Single Minimal Overlay Tag */}
                 <div className="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-md p-4 rounded-2xl border border-white/20 shadow-lg flex justify-between items-center transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                   <div className="flex flex-col">
-                    <span className="text-xs font-bold bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent bg-clip-text py-1 px-2 uppercase tracking-wider mb-1">Expertise</span>
+                    <span className="text-xs font-bold bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent bg-clip-text py-1 px-2 uppercase tracking-wider mb-1 -ml-2">Expertise</span>
                     <span className="text-sm font-semibold text-gray-900">High-Fidelity Production</span>
                   </div>
                   <div className="w-8 h-8 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center">
@@ -172,9 +121,9 @@ export default function CompanyPage() {
 
 
       {/* Why Choose Us */}
-      <section className="py-24 max-w-7xl mx-auto px-6">
-        <div className="w-full max-w-[1440px] mx-auto px-6 md:px-12 xl:px-24">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8 items-center">
+      <section className="py-24">
+        <div className="w-full max-w-[1200px] mx-auto px-6 md:px-12 xl:px-20">
+          <div className="grid grid-cols-1 lg:grid-cols-[4fr_5fr] gap-16 lg:gap-12 items-center">
 
             {/* Left Side */}
             <div className="max-w-xl lg:pr-8">
@@ -204,25 +153,25 @@ export default function CompanyPage() {
                 {
                   icon: <Camera strokeWidth={1.5} className="w-6 h-6" style={{ stroke: 'url(#icon-gradient)' }} />,
                   title: 'Tailored Shoots',
-                  content: "We don't believe in one-size-fits-all. Every shoot we produce is customized to your unique brand goals."
+                  content: "Customized specifically to your brand goals."
                 },
                 {
                   icon: <Layers strokeWidth={1.5} className="w-6 h-6" style={{ stroke: 'url(#icon-gradient)' }} />,
-                  title: 'High-Volume Capacity',
-                  content: 'Our studio infrastructure is designed to handle e-commerce catalogs seamlessly without compromising fidelity.'
+                  title: 'High-Volume',
+                  content: 'Flawless large-scale e-commerce production.'
                 },
                 {
                   icon: <Users strokeWidth={1.5} className="w-6 h-6" style={{ stroke: 'url(#icon-gradient)' }} />,
-                  title: 'Collaborative Process',
-                  content: 'We put our clients at the heart of everything we do, ensuring transparent communication.'
+                  title: 'Collaborative',
+                  content: 'Transparent communication at every single step.'
                 },
                 {
                   icon: <ShieldCheck strokeWidth={1.5} className="w-6 h-6" style={{ stroke: 'url(#icon-gradient)' }} />,
                   title: 'Asset Security',
-                  content: 'Your visual assets are safe with us. We adhere to the highest standards of long-term archiving.'
+                  content: 'Rigorous standards for long-term archiving.'
                 }
               ].map((item, index) => (
-                <div key={index} className="group bg-white border border-gray-100 rounded-[2.5rem] p-2.5 shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-lg transition-all duration-300 flex flex-col min-h-[240px] cursor-pointer hover:-translate-y-1">
+                <div key={index} className="group bg-white border border-gray-100 rounded-[2.5rem] p-2.5 shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-lg transition-all duration-300 flex flex-col min-h-[160px] cursor-pointer hover:-translate-y-1">
 
                   {/* Top Section: Title & Icon */}
                   <div className="px-4 pt-3 pb-3 flex items-start gap-3">
@@ -253,7 +202,7 @@ export default function CompanyPage() {
 
       {/* Testimonials */}
       <section>
-        <div className="w-full max-w-[1440px] mx-auto px-6 md:px-12 xl:px-24">
+        <div className="w-full max-w-[1200px] mx-auto px-8 md:px-16 xl:px-32">
           <TestimonialsMinimal />
         </div>
       </section>
@@ -262,29 +211,29 @@ export default function CompanyPage() {
 
       {/* Approval Logos Section */}
       <section className={styles.approvalSection}>
-        <div className="w-full max-w-[1440px] mx-auto px-6 md:px-12 xl:px-24">
+        <div className="w-full max-w-[1200px] mx-auto px-6 md:px-12">
           <div className="mb-12 text-center">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tighter leading-tight text-slate-900">
               Official <span className="font-bold bg-gradient-to-r from-blue-700 via-blue-500 to-cyan-400 bg-clip-text text-transparent pr-2">Accreditations.</span>
             </h2>
           </div>
-          <div className={styles.approvalLogos}>
-            <div className={styles.approvalLogoWrap}>
+          <div className="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-16 lg:gap-24">
+            <div className="flex justify-center items-center">
               <Image
                 src="/images/bl-approvel-logo.webp"
                 alt="Boomerang Labs Approval Badge"
                 width={400}
                 height={250}
-                className={styles.approvalLogo}
+                className="w-[260px] md:w-[320px] lg:w-[400px] h-auto object-contain"
               />
             </div>
-            <div className={styles.approvalLogoWrap}>
+            <div className="flex justify-center items-center">
               <Image
                 src="/images/bl-approvel-logo-2.webp"
                 alt="Boomerang Labs Approval Badge 2"
                 width={400}
                 height={250}
-                className={styles.approvalLogo}
+                className="w-[260px] md:w-[320px] lg:w-[400px] h-auto object-contain"
                 style={{ transform: 'scale(0.85)' }}
               />
             </div>

@@ -67,8 +67,8 @@ const photographyPlans: Plan[] = [
 export default function PhotographyPricing({ hideHeader = false, hideCTA = false }: { hideHeader?: boolean, hideCTA?: boolean } = {}) {
   return (
     <div className={`w-full bg-[#FAFAFA] text-slate-900 ${hideHeader ? 'pt-12' : 'pt-32'} pb-16 px-6 md:px-12 selection:bg-blue-600 selection:text-white`}>
-      <div className="max-w-[1400px] mx-auto">
-        
+      <div className="max-w-[1200px] mx-auto">
+
         {/* Header */}
         {!hideHeader && (
           <div className="flex flex-col items-center text-center mb-20">
@@ -90,11 +90,10 @@ export default function PhotographyPricing({ hideHeader = false, hideCTA = false
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
               transition={{ duration: 0.4, delay: idx * 0.1 }}
-              className={`relative flex flex-col bg-white rounded-[24px] p-8 md:p-10 transition-all duration-300 ${
-                plan.isPopular 
-                  ? 'shadow-[0_20px_40px_-15px_rgba(37,99,235,0.15)] ring-2 ring-blue-600 lg:scale-[1.02] z-10' 
+              className={`relative flex flex-col bg-white rounded-[24px] p-8 md:p-10 transition-all duration-300 ${plan.isPopular
+                  ? 'shadow-[0_20px_40px_-15px_rgba(37,99,235,0.15)] ring-2 ring-blue-600 lg:scale-[1.02] z-10'
                   : 'shadow-[0_0_0_1px_rgba(0,0,0,0.05),0_8px_20px_rgba(0,0,0,0.02)] border border-slate-100 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)]'
-              }`}
+                }`}
             >
               {plan.isPopular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2">
@@ -103,7 +102,7 @@ export default function PhotographyPricing({ hideHeader = false, hideCTA = false
                   </span>
                 </div>
               )}
-              
+
               {!plan.isPopular && (
                 <span className="inline-block w-fit bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-wider py-1.5 px-4 rounded-full mb-6">
                   {plan.badge}
@@ -121,11 +120,10 @@ export default function PhotographyPricing({ hideHeader = false, hideCTA = false
                 <p className="text-sm text-slate-400 font-medium line-through mt-2 decoration-slate-300">Worth {plan.worth}</p>
               </div>
 
-              <Link href="/contact" className={`w-full py-4 px-6 rounded-full font-bold text-sm text-center transition-all duration-300 ${
-                plan.isPopular
+              <Link href="/contact" className={`w-full py-4 px-6 rounded-full font-bold text-sm text-center transition-all duration-300 ${plan.isPopular
                   ? 'bg-slate-900 text-white hover:bg-slate-800 shadow-md hover:shadow-lg'
                   : 'bg-slate-50 text-slate-900 hover:bg-slate-100 border border-slate-200'
-              }`}>
+                }`}>
                 {plan.cta}
               </Link>
 
@@ -178,7 +176,7 @@ export default function PhotographyPricing({ hideHeader = false, hideCTA = false
             <p className="text-xl text-slate-600 max-w-2xl mb-12">
               Let's create visuals that actually move your brand forward.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-8 sm:gap-12 relative z-10 items-center justify-center">
               <Link href="/contact" className="inline-flex items-center gap-4 text-sm font-bold uppercase tracking-widest border-b-2 border-slate-900 pb-2 hover:border-blue-600 transition-colors group">
                 <span className="bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent bg-clip-text py-1 px-2 -ml-2">Book a Session</span> <ArrowRight className="w-4 h-4 text-cyan-500 group-hover:text-blue-600 transition-colors" />

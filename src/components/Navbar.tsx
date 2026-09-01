@@ -8,7 +8,7 @@ import { Menu, X } from 'lucide-react'
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const navLinks = ['Company', 'Strategy', 'Photography', 'Production', 'Pricing']
+  const navLinks = ['Company', 'Strategy', 'Photography', 'Podcasts', 'Pricing']
 
   return (
     <>
@@ -19,7 +19,7 @@ export default function Navbar() {
         className="sticky top-0 z-[1000] w-full h-[80px] lg:h-[100px] bg-white border-b border-black/5"
         style={{ fontFamily: 'var(--font-inter), sans-serif' }}
       >
-        <div className="w-full max-w-[1440px] mx-auto h-full px-6 md:px-12 xl:px-24 flex items-center justify-between relative">
+        <div className="w-full max-w-[1200px] mx-auto h-full px-8 md:px-16 xl:px-32 flex items-center justify-between relative">
 
           {/* Logo */}
           <Link href="/" className="flex items-center shrink-0 h-full py-2">

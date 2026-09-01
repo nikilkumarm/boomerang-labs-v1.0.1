@@ -19,7 +19,7 @@ export default function Services() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-80px' }}
         transition={{ duration: 0.7, ease: 'easeOut' }}
-        className="w-full max-w-[1440px] px-6 md:px-12 xl:px-24"
+        className="w-full max-w-[1200px] px-8 md:px-16 xl:px-32"
       >
         <div className="flex flex-col lg:flex-row justify-center items-start gap-12 lg:gap-16 xl:gap-20">
           {services.map((svc, idx) => {
