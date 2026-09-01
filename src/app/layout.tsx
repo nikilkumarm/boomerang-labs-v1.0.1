@@ -57,12 +57,15 @@ const outfit = Outfit({
 })
 
 export const metadata: Metadata = {
-  title: 'Boomerang Studios — Commercial Photography',
-  description: 'We shoot premium fashion lookbooks, high-volume e-commerce products, and corporate events globally. Boomerang Studios is dedicated to high-fidelity visual production.',
-  keywords: ['commercial photography', 'fashion lookbook', 'model shoot', 'product photography', 'event photography', 'Boomerang Studios'],
-  authors: [{ name: 'Boomerang Studios' }],
+  title: {
+    template: 'Boomerang Labs - %s',
+    default: 'Boomerang Labs - Home',
+  },
+  description: 'We shoot premium fashion lookbooks, high-volume e-commerce products, and corporate events globally. Boomerang Labs is dedicated to high-fidelity visual production.',
+  keywords: ['commercial photography', 'fashion lookbook', 'model shoot', 'product photography', 'event photography', 'Boomerang Labs'],
+  authors: [{ name: 'Boomerang Labs' }],
   openGraph: {
-    title: 'Boomerang Studios — Commercial Photography',
+    title: 'Boomerang Labs',
     description: 'We shoot premium fashion lookbooks, high-volume e-commerce products, and corporate events globally.',
     type: 'website',
   },
