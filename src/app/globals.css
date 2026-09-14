@@ -11,7 +11,7 @@
 }
 
 :root {
-  --background: #F8F9FB;
+  --background: #FFFFFF;
   --foreground: #08152E;
 
   --pure-white: #FFFFFF;
@@ -38,6 +38,14 @@ body, html {
   box-sizing: border-box;
   width: 100%;
   overflow-x: hidden;
+}
+
+@keyframes marquee-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.marquee-track {
+  animation: marquee-scroll 28s linear infinite;
 }
 
 /* Additional global resets */

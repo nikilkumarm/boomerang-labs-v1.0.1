@@ -43,12 +43,13 @@ export default function EditorialPodcastsPage() {
       <section className="w-full max-w-[1200px] mx-auto px-6 md:px-12 py-24 flex flex-col gap-32">
 
         {/* Hero Image */}
-        <div className="w-full relative aspect-[21/9] overflow-hidden bg-gradient-to-br from-blue-600 to-cyan-500 group rounded-[2rem]">
+        <div className="w-full relative aspect-[16/10] md:aspect-[16/9] overflow-hidden bg-white border border-slate-200/80 shadow-md group rounded-[2rem]">
           <Image
             src="/images/podcasts_hero.webp"
-            alt="Podcast Studio"
+            alt="Podcast Studio Setup"
             fill
-            className="object-cover"
+            className="object-contain p-4 md:p-8"
+            priority
           />
         </div>
 
@@ -70,20 +71,53 @@ export default function EditorialPodcastsPage() {
             <span className="bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent bg-clip-text py-1 px-2 text-xs font-bold tracking-[0.3em] uppercase mb-8 block border-b border-slate-300 pb-4">
               Core Capabilities
             </span>
-            <div className="flex flex-col gap-12">
+            <div className="flex flex-col divide-y divide-slate-200">
               {[
-                { title: 'Studio Recording', desc: 'Acoustically treated environments equipped with broadcast-standard microphones for pristine, radio-ready vocal captures.' },
-                { title: 'Audio Restoration', desc: 'Advanced noise profiling and removal. We eliminate hums, clicks, and background interference from field recordings.' },
-                { title: 'Multi-Cam Podcasting', desc: 'Seamless integration of 4K video feeds with perfectly synced audio for YouTube-first video podcast formats.' },
-                { title: 'Distribution Prep', desc: 'Mastering to precise LUFS standards required by Spotify, Apple Podcasts, and independent RSS feeds.' }
+                { 
+                  num: '01',
+                  title: 'Acoustic Studio Recording', 
+                  tags: ['Shure SM7B Suite', 'Treated Isolation'],
+                  desc: 'Purpose-built vocal isolation booths calibrated for pristine, warm broadcast captures with zero room-bleed or flutter echo.' 
+                },
+                { 
+                  num: '02',
+                  title: 'Multi-Cam 4K Video Podcasting', 
+                  tags: ['Sony Cinema ISOs', 'Multi-Angle Sync'],
+                  desc: 'Multi-angle cinematic capture with synced timecode, dedicated host/guest closeups, and wide room framing optimized for YouTube and vertical cutdowns.' 
+                },
+                { 
+                  num: '03',
+                  title: 'Platform Mastering & Distribution', 
+                  tags: ['-14 LUFS Standard', 'Metadata & Chapters'],
+                  desc: 'Loudness mastering to exact Spotify and Apple Podcasts specifications, complete with custom timestamps, chapter markers, and artwork integration.' 
+                }
               ].map((cap, idx) => (
-                <div key={idx} className="flex flex-col gap-3 group">
-                  <h3 className="text-2xl font-medium tracking-tight text-slate-900 group-hover:text-blue-600 transition-colors">
-                    {cap.title}
-                  </h3>
-                  <p className="text-slate-600 leading-relaxed">
+                <div key={idx} className="py-7 first:pt-0 last:pb-0 flex flex-col gap-3 group transition-all duration-300">
+                  <div className="flex items-baseline justify-between gap-4">
+                    <div className="flex items-baseline gap-4">
+                      <span className="text-2xl md:text-3xl font-serif italic text-slate-300 group-hover:text-blue-600 transition-colors duration-300">
+                        {cap.num}
+                      </span>
+                      <h3 className="text-xl md:text-2xl font-bold tracking-tight text-slate-900 group-hover:text-blue-600 transition-colors duration-300">
+                        {cap.title}
+                      </h3>
+                    </div>
+                  </div>
+
+                  <p className="text-slate-600 text-base leading-relaxed pl-10 md:pl-12">
                     {cap.desc}
                   </p>
+
+                  <div className="flex flex-wrap gap-2 pl-10 md:pl-12 mt-1">
+                    {cap.tags.map((tag, tIdx) => (
+                      <span 
+                        key={tIdx} 
+                        className="text-[11px] font-mono uppercase tracking-wider text-slate-500 bg-slate-100 px-2.5 py-1 rounded border border-slate-200/80 group-hover:border-blue-200 group-hover:bg-blue-50/50 group-hover:text-blue-700 transition-colors"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               ))}
             </div>

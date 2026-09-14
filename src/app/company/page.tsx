@@ -50,7 +50,7 @@ export default function CompanyPage() {
       <section className="relative pt-12 pb-16 lg:pt-20 lg:pb-32 overflow-hidden">
         <div className="w-full max-w-[1200px] mx-auto px-8 md:px-16 xl:px-32">
           <div className="flex flex-col lg:flex-row gap-16 lg:gap-12 items-center">
-            
+
             {/* Left Content */}
             <div className="flex-1 lg:max-w-xl flex flex-col justify-center">
 

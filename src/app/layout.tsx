@@ -87,8 +87,8 @@ export default function RootLayout({
         <main className="w-full">
           {children}
 
-          <footer className="w-full bg-[#F8F9FB] pt-4 px-6 md:px-12 xl:px-24 relative z-50">
-            <div className="max-w-[1200px] mx-auto bg-white rounded-t-[40px] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] border-t border-l border-r border-gray-100 p-10 md:p-16 relative overflow-hidden">
+          <footer className="w-full bg-white pt-4 px-6 md:px-12 xl:px-24 relative z-50">
+            <div className="max-w-[1440px] mx-auto bg-[#F8F9FB] rounded-t-[40px] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] border-t border-l border-r border-gray-100 p-10 md:p-16 relative overflow-hidden">
 
               {/* Background Glows */}
               <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-gradient-to-br from-[#2E6BFF]/20 to-transparent rounded-full blur-[100px] -translate-y-1/3 translate-x-1/3 pointer-events-none z-0" />

@@ -9,13 +9,35 @@ export default function UniformGalleryShowcase() {
   const { scrollYProgress } = useScroll()
   const yHero = useTransform(scrollYProgress, [0, 1], ['0%', '50%'])
 
-  // Helper arrays for placeholders
-  const placeholders = ['/images/img-a.webp', '/images/img-b.webp', '/images/img-c.webp', '/images/img-d.webp', '/images/img-f.webp', '/images/img-g.webp', '/images/img-h.webp', '/images/img-i.webp']
+  // Look 01 uploaded studio portraits (9 WebP images)
+  const look1Images = [
+    '/images/look1/look1_1.webp',
+    '/images/look1/look1_2.webp',
+    '/images/look1/look1_3.webp',
+    '/images/look1/look1_4.webp',
+    '/images/look1/look1_5.webp',
+    '/images/look1/look1_6.webp',
+    '/images/look1/look1_7.webp',
+    '/images/look1/look1_8.webp',
+    '/images/look1/look1_9.webp',
+  ]
+
+  // Look 02 uploaded studio portraits (6 WebP images)
+  const look2Images = [
+    '/images/look2/look2_1.webp',
+    '/images/look2/look2_2.webp',
+    '/images/look2/look2_3.webp',
+    '/images/look2/look2_4.webp',
+    '/images/look2/look2_5.webp',
+    '/images/look2/look2_6.webp',
+  ]
+
+
 
   // Helper component for a portrait matching the screenshot aspect ratio
   const Portrait = ({ src, delay = 0 }: { src: string, delay?: number }) => (
-    <div className="relative overflow-hidden aspect-[4/5] bg-gray-50 rounded-md shadow-sm">
-      <Image src={src} alt="Editorial Portrait" fill className="object-cover" />
+    <div className="relative overflow-hidden aspect-[4/5] bg-gray-50 rounded-lg shadow-sm group">
+      <Image src={src} alt="Editorial Portrait" fill className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out" />
     </div>
   )
 
@@ -45,81 +67,41 @@ export default function UniformGalleryShowcase() {
         <div className="z-10 w-full md:w-1/2 flex justify-center md:justify-end">
           <div className="w-full max-w-[350px] lg:max-w-[400px]">
             <div className="relative overflow-hidden aspect-[4/5] rounded-sm shadow-[0_30px_60px_-15px_rgba(0,0,0,0.2)]">
-              <Image src={'/images/portfolio_hero.webp'} alt="Hero Portrait" fill className="object-cover" />
+              <Image src={'/images/camera_laptop_sketch.webp'} alt="Hero Portrait" fill className="object-cover" priority />
             </div>
           </div>
         </div>
       </section>
 
       {/* =========================================================================
-                                COSTUME 01 (9 Portraits) 
+                                COSTUME 01 (Look 01) 
          ========================================================================= */}
       <section className="w-full max-w-[1000px] mx-auto px-6 md:px-12 mt-24 border-t border-black/5 pt-24">
         <div className="text-center mb-16">
           <span className="text-gray-400 text-xs font-sans tracking-widest uppercase mb-4 block">Look 01</span>
-          <h2 className="text-3xl md:text-5xl font-serif italic">Midnight Velvet.</h2>
+          <h2 className="text-3xl md:text-5xl font-serif italic">Black & Gold.</h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
-          <Portrait src={placeholders[0]} delay={0.0} />
-          <Portrait src={placeholders[1]} delay={0.1} />
-          <Portrait src={placeholders[2]} delay={0.2} />
-
-          <Portrait src={placeholders[3]} delay={0.0} />
-          <Portrait src={placeholders[4]} delay={0.1} />
-          <Portrait src={placeholders[5]} delay={0.2} />
-
-          <Portrait src={placeholders[6]} delay={0.0} />
-          <Portrait src={placeholders[7]} delay={0.1} />
-          <Portrait src={placeholders[0]} delay={0.2} />
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+          {look1Images.map((src, idx) => (
+            <Portrait key={idx} src={src} delay={idx * 0.1} />
+          ))}
         </div>
       </section>
 
       {/* =========================================================================
-                                COSTUME 02 (9 Portraits) 
-         ========================================================================= */}
-      <section className="w-full max-w-[1000px] mx-auto px-6 md:px-12 mt-32 border-t border-black/5 pt-24">
-        <div className="text-center mb-16">
-          <span className="text-gray-400 text-xs font-sans tracking-widest uppercase mb-4 block">Look 02</span>
-          <h2 className="text-3xl md:text-5xl font-serif italic">The Signature Silhouette.</h2>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
-          <Portrait src={placeholders[1]} delay={0.0} />
-          <Portrait src={placeholders[2]} delay={0.1} />
-          <Portrait src={placeholders[3]} delay={0.2} />
-
-          <Portrait src={placeholders[4]} delay={0.0} />
-          <Portrait src={placeholders[5]} delay={0.1} />
-          <Portrait src={placeholders[6]} delay={0.2} />
-
-          <Portrait src={placeholders[7]} delay={0.0} />
-          <Portrait src={placeholders[0]} delay={0.1} />
-          <Portrait src={placeholders[1]} delay={0.2} />
-        </div>
-      </section>
-
-      {/* =========================================================================
-                                COSTUME 03 (9 Portraits) 
+                                COSTUME 02 (Look 02) 
          ========================================================================= */}
       <section className="w-full max-w-[1000px] mx-auto px-6 md:px-12 mt-32 border-t border-black/5 pt-24 mb-24">
         <div className="text-center mb-16">
-          <span className="text-gray-400 text-xs font-sans tracking-widest uppercase mb-4 block">Look 03</span>
-          <h2 className="text-3xl md:text-5xl font-serif italic">Ethereal Whites.</h2>
+          <span className="text-gray-400 text-xs font-sans tracking-widest uppercase mb-4 block">Look 02</span>
+          <h2 className="text-3xl md:text-5xl font-serif italic">Black & Red.</h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
-          <Portrait src={placeholders[2]} delay={0.0} />
-          <Portrait src={placeholders[3]} delay={0.1} />
-          <Portrait src={placeholders[4]} delay={0.2} />
-
-          <Portrait src={placeholders[5]} delay={0.0} />
-          <Portrait src={placeholders[6]} delay={0.1} />
-          <Portrait src={placeholders[7]} delay={0.2} />
-
-          <Portrait src={placeholders[0]} delay={0.0} />
-          <Portrait src={placeholders[1]} delay={0.1} />
-          <Portrait src={placeholders[2]} delay={0.2} />
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+          {look2Images.map((src, idx) => (
+            <Portrait key={idx} src={src} delay={idx * 0.1} />
+          ))}
         </div>
       </section>
 
