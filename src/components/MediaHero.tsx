@@ -9,23 +9,28 @@ import { ShoppingCart, ArrowUp, ArrowDown } from 'lucide-react'
 export default function MediaHero() {
   return (
     <section
-      className="relative w-full h-screen min-h-[800px] flex overflow-hidden bg-gradient-to-br from-[#ffffff] via-[#fafcff] via-60% to-[#e8f1fc]"
+      className="relative w-full h-screen min-h-[800px] flex overflow-hidden bg-white"
       style={{
         fontFamily: 'var(--font-inter), sans-serif',
       }}
     >
+      {/* Dynamic Ambient Background Glows */}
+      <div className="absolute top-[-10%] right-[-5%] w-[650px] h-[650px] rounded-full bg-gradient-to-br from-[#2E6BFF]/20 via-[#00C6FF]/15 to-transparent blur-[120px] pointer-events-none z-0" />
+      <div className="absolute top-[30%] right-[10%] w-[500px] h-[500px] rounded-full bg-gradient-to-br from-[#06b6d4]/15 via-[#2E6BFF]/10 to-transparent blur-[100px] pointer-events-none z-0" />
+      <div className="absolute bottom-[-10%] left-[5%] w-[500px] h-[500px] rounded-full bg-gradient-to-tr from-[#2E6BFF]/10 via-[#00C6FF]/10 to-transparent blur-[120px] pointer-events-none z-0" />
+
       {/* Soft Delicate Ambient Glow on Right Side */}
       <div
-        className="absolute top-0 right-0 w-[65vw] h-full pointer-events-none z-0 opacity-30"
+        className="absolute top-0 right-0 w-[65vw] h-full pointer-events-none z-0 opacity-60"
         style={{
-          background: 'radial-gradient(circle at 85% 45%, #d0e7ff 0%, #eef6ff 50%, transparent 75%)',
-          filter: 'blur(50px)',
+          background: 'radial-gradient(circle at 80% 50%, rgba(46,107,255,0.18) 0%, rgba(0,198,255,0.12) 35%, rgba(208,231,255,0.08) 60%, transparent 75%)',
+          filter: 'blur(40px)',
         }}
       />
 
       {/* Subtle Micro-Dot Pattern Overlay */}
       <div
-        className="absolute inset-0 pointer-events-none z-0 opacity-20"
+        className="absolute inset-0 pointer-events-none z-0 opacity-25"
         style={{
           backgroundImage: 'radial-gradient(#08152E 0.75px, transparent 0.75px)',
           backgroundSize: '12px 12px',

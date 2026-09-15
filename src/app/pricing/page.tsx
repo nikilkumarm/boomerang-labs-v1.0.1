@@ -15,7 +15,7 @@ export default function PricingPage() {
   const [activeService, setActiveService] = useState<ServiceTab>('photo')
 
   return (
-    <main className="min-h-screen bg-[#FAFAFA] text-slate-900 font-sans selection:bg-blue-600 selection:text-white pt-40 pb-20">
+    <main className="min-h-screen bg-white text-slate-900 font-sans selection:bg-blue-600 selection:text-white pt-40 pb-20">
       
       {/* 1. HERO SECTION */}
       <section className="w-full max-w-[1200px] mx-auto px-6 md:px-12 flex flex-col items-center text-center mb-20">

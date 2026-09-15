@@ -47,7 +47,7 @@ export default function CompanyPage() {
   return (
     <div className={styles.pageWrapper}>
       {/* Unified Hero Section */}
-      <section className="relative pt-12 pb-16 lg:pt-20 lg:pb-32 overflow-hidden">
+      <section className="relative pt-28 md:pt-36 lg:pt-40 pb-16 lg:pb-32 overflow-hidden">
         <div className="w-full max-w-[1200px] mx-auto px-8 md:px-16 xl:px-32">
           <div className="flex flex-col lg:flex-row gap-16 lg:gap-12 items-center">
 
@@ -93,25 +93,14 @@ export default function CompanyPage() {
 
             {/* Right Image Container */}
             <div className="flex-1 w-full relative">
-              <div className="relative w-full aspect-[4/5] max-w-md mx-auto lg:ml-auto rounded-[2rem] overflow-hidden group shadow-2xl">
+              <div className="relative w-full aspect-[4/5] max-w-md mx-auto lg:ml-auto rounded-[2rem] overflow-hidden shadow-2xl border border-black/5">
                 <Image
-                  src="/images/company_hero.webp"
-                  alt="Company hero"
+                  src="/images/visual_partner_hero.webp"
+                  alt="Your Trusted Visual Partner"
                   fill
-                  className="object-cover object-center bg-gray-100 transition-transform duration-700 group-hover:scale-105"
+                  className="object-cover object-center"
+                  priority
                 />
-                <div className="absolute inset-0 border border-black/5 rounded-[2rem] pointer-events-none"></div>
-
-                {/* Single Minimal Overlay Tag */}
-                <div className="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-md p-4 rounded-2xl border border-white/20 shadow-lg flex justify-between items-center transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                  <div className="flex flex-col">
-                    <span className="text-xs font-bold bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent bg-clip-text py-1 px-2 uppercase tracking-wider mb-1 -ml-2">Expertise</span>
-                    <span className="text-sm font-semibold text-gray-900">High-Fidelity Production</span>
-                  </div>
-                  <div className="w-8 h-8 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
-                  </div>
-                </div>
               </div>
             </div>
           </div>

@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function TermsOfService() {
   return (
-    <main className="w-full min-h-screen bg-[#FAFAFA] text-slate-900 pt-32 pb-32 px-6 md:px-12 selection:bg-blue-600 selection:text-white">
+    <main className="w-full min-h-screen bg-white text-slate-900 pt-32 pb-32 px-6 md:px-12 selection:bg-blue-600 selection:text-white">
       <div className="max-w-[800px] mx-auto bg-white p-10 md:p-16 rounded-[2rem] shadow-[0_10px_40px_-10px_rgba(0,0,0,0.05)] border border-slate-100">
         
         <div className="mb-16 border-b border-slate-100 pb-10 text-center">

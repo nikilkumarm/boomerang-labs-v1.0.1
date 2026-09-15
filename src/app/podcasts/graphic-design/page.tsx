@@ -9,7 +9,7 @@ import GraphicDesignPricing from '@/components/GraphicDesignPricing'
 
 export default function EditorialGraphicDesignPage() {
   return (
-    <main className="min-h-screen text-slate-900 font-sans selection:bg-slate-900 selection:text-white">
+    <main className="min-h-screen bg-white text-slate-900 font-sans selection:bg-slate-900 selection:text-white">
 
       {/* 1. EDITORIAL HERO */}
       <section className="w-full pt-40 pb-20 px-6 md:px-12 max-w-[1200px] mx-auto flex flex-col lg:flex-row justify-between items-end gap-12 border-b border-slate-300">

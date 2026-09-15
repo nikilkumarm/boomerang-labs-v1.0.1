@@ -35,17 +35,17 @@ export default function UniformGalleryShowcase() {
 
 
   // Helper component for a portrait matching the screenshot aspect ratio
-  const Portrait = ({ src, delay = 0 }: { src: string, delay?: number }) => (
-    <div className="relative overflow-hidden aspect-[4/5] bg-gray-50 rounded-lg shadow-sm group">
-      <Image src={src} alt="Editorial Portrait" fill className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out" />
+  const Portrait = ({ src }: { src: string, delay?: number }) => (
+    <div className="relative overflow-hidden aspect-[4/5] bg-gray-50 rounded-lg shadow-sm">
+      <Image src={src} alt="Editorial Portrait" fill className="object-cover" />
     </div>
   )
 
   return (
-    <main className="relative w-full min-h-screen text-[#0A0A0A] overflow-x-hidden selection:bg-black selection:text-white">
+    <main className="relative w-full min-h-screen text-[#0A0A0A] overflow-x-hidden selection:bg-black selection:text-white bg-white">
 
       {/* Cinematic Hero Title */}
-      <section className="relative w-full flex flex-col md:flex-row items-center justify-between pt-12 md:pt-16 px-6 md:px-12 lg:px-24 max-w-[1200px] mx-auto gap-16 lg:gap-32 mb-16">
+      <section className="relative w-full flex flex-col md:flex-row items-center justify-between pt-8 md:pt-12 px-6 md:px-12 lg:px-24 max-w-[1200px] mx-auto gap-12 lg:gap-24 mb-4">
 
         {/* Left: Typography */}
         <motion.div
@@ -65,9 +65,9 @@ export default function UniformGalleryShowcase() {
 
         {/* Right: Hero Portrait */}
         <div className="z-10 w-full md:w-1/2 flex justify-center md:justify-end">
-          <div className="w-full max-w-[350px] lg:max-w-[400px]">
-            <div className="relative overflow-hidden aspect-[4/5] rounded-sm shadow-[0_30px_60px_-15px_rgba(0,0,0,0.2)]">
-              <Image src={'/images/camera_laptop_sketch.webp'} alt="Hero Portrait" fill className="object-cover" priority />
+          <div className="w-full max-w-[280px] sm:max-w-[300px] md:max-w-[320px]">
+            <div className="relative overflow-hidden aspect-[4/5] rounded-[28px] shadow-[0_20px_50px_-10px_rgba(0,0,0,0.18)] border border-black/5">
+              <Image src="/images/photography_hero_camera.webp" alt="Editorial Camera Hero" fill className="object-cover" priority />
             </div>
           </div>
         </div>
@@ -76,7 +76,7 @@ export default function UniformGalleryShowcase() {
       {/* =========================================================================
                                 COSTUME 01 (Look 01) 
          ========================================================================= */}
-      <section className="w-full max-w-[1000px] mx-auto px-6 md:px-12 mt-24 border-t border-black/5 pt-24">
+      <section className="w-full max-w-[1000px] mx-auto px-6 md:px-12 mt-6 md:mt-8 border-t border-black/5 pt-12 md:pt-14">
         <div className="text-center mb-16">
           <span className="text-gray-400 text-xs font-sans tracking-widest uppercase mb-4 block">Look 01</span>
           <h2 className="text-3xl md:text-5xl font-serif italic">Black & Gold.</h2>

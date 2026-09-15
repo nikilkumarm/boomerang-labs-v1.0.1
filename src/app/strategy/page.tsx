@@ -8,7 +8,7 @@ import { ArrowRight } from 'lucide-react'
 
 export default function EditorialStrategyPage() {
   return (
-    <main className="min-h-screen text-slate-900 font-sans selection:bg-slate-900 selection:text-white">
+    <main className="min-h-screen bg-white text-slate-900 font-sans selection:bg-slate-900 selection:text-white">
 
       {/* 1. EDITORIAL HERO */}
       <section className="w-full pt-40 pb-20 px-6 md:px-12 max-w-[1200px] mx-auto flex flex-col lg:flex-row justify-between items-end gap-12 border-b border-slate-300">
@@ -47,8 +47,8 @@ export default function EditorialStrategyPage() {
           <div className="flex-1 w-full order-2 lg:order-1 relative">
             <div className="block relative aspect-[4/3] overflow-hidden bg-slate-200">
               <Image
-                src="/images/img-d.webp"
-                alt="Pre-Production"
+                src="/images/pre_production.webp"
+                alt="Pre-Production & Casting"
                 fill
                 className="object-cover"
               />
@@ -91,7 +91,7 @@ export default function EditorialStrategyPage() {
           <div className="flex-1 w-full relative">
             <div className="block relative aspect-square overflow-hidden bg-slate-200 lg:mt-32">
               <Image
-                src="/images/img-g.webp"
+                src="/images/canon_r5_r6_gear.webp"
                 alt="Studio Capture"
                 fill
                 className="object-cover"
@@ -105,8 +105,8 @@ export default function EditorialStrategyPage() {
           <div className="flex-1 w-full order-2 lg:order-1 relative">
             <div className="block relative aspect-[4/3] overflow-hidden bg-slate-200">
               <Image
-                src="/images/img-f.webp"
-                alt="Post-Production"
+                src="/images/master_post_production.webp"
+                alt="Master Post-Production"
                 fill
                 className="object-cover"
               />

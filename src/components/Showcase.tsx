@@ -61,19 +61,17 @@ function LiveStatItem({ targetNumber, suffix, label }: { targetNumber: number; s
       className="flex flex-col items-center cursor-pointer group transition-all duration-300 transform hover:-translate-y-1.5 px-4 md:px-6 py-3 rounded-2xl hover:bg-blue-50/50 select-none"
     >
       <span
-        className={`text-[42px] md:text-[58px] font-bold tracking-tighter leading-none transition-all duration-300 ${
-          isHovered
+        className={`text-[42px] md:text-[58px] font-bold tracking-tighter leading-none transition-all duration-300 ${isHovered
             ? 'bg-gradient-to-r from-[#2E6BFF] via-[#00C6FF] to-[#2E6BFF] text-transparent bg-clip-text scale-105'
             : 'text-[#08152E]'
-        }`}
+          }`}
         style={{ fontFamily: 'var(--font-inter), sans-serif' }}
       >
         {count}{suffix}
       </span>
       <span
-        className={`text-[11px] font-bold tracking-[0.2em] mt-3 uppercase text-center transition-colors duration-300 ${
-          isHovered ? 'text-[#2E6BFF]' : 'text-gray-500'
-        }`}
+        className={`text-[11px] font-bold tracking-[0.2em] mt-3 uppercase text-center transition-colors duration-300 ${isHovered ? 'text-[#2E6BFF]' : 'text-gray-500'
+          }`}
         style={{ fontFamily: 'var(--font-inter), sans-serif' }}
       >
         {label}
@@ -84,19 +82,19 @@ function LiveStatItem({ targetNumber, suffix, label }: { targetNumber: number; s
 
 export default function Showcase() {
   const leftCards = [
-    { src: '/images/img-g.webp', width: 110, height: 200, y: -30, delay: 0.5 },
-    { src: '/images/camera_laptop.webp', width: 140, height: 250, y: 15, delay: 0.4 },
-    { src: '/images/portfolio_hero.webp', width: 170, height: 300, y: -15, delay: 0.3 },
+    { src: '/images/showcase_left_1.webp', width: 150, height: 210, y: -20, delay: 0.5, scale: 1.3, position: 'center' },
+    { src: '/images/showcase_left_2.webp', width: 140, height: 260, y: 15, delay: 0.4, scale: 1.2, position: 'center 15%' },
+    { src: '/images/showcase_left_3.webp', width: 170, height: 320, y: -10, delay: 0.3, scale: 1.2, position: 'center 15%' },
   ]
 
   const rightCards = [
-    { src: '/images/img-b.webp', width: 170, height: 300, y: 20, delay: 0.3 },
-    { src: '/images/img-f.webp', width: 140, height: 250, y: -20, delay: 0.4 },
-    { src: '/images/img-h.webp', width: 110, height: 200, y: 15, delay: 0.5 },
+    { src: '/images/showcase_right_1.webp', width: 170, height: 320, y: 15, delay: 0.3, scale: 1.2, position: 'center 20%' },
+    { src: '/images/showcase_right_2.webp', width: 140, height: 260, y: -20, delay: 0.4, scale: 1.25, position: 'center' },
+    { src: '/images/showcase_right_3.webp', width: 150, height: 210, y: 15, delay: 0.5, scale: 1.45, position: 'center 60%' },
   ]
 
   return (
-    <section className="relative w-full bg-transparent flex flex-col items-center z-30 py-24 md:py-40 overflow-hidden">
+    <section className="relative w-full bg-white flex flex-col items-center z-30 py-24 md:py-40 overflow-hidden">
 
       {/* Title / Intro */}
       <motion.div
@@ -142,23 +140,34 @@ export default function Showcase() {
       </motion.div>
 
       {/* Image Collage */}
-      <div className="w-full flex justify-center items-center h-[600px] overflow-hidden">
+      <div className="w-full flex justify-center items-center h-[520px] md:h-[620px] overflow-hidden">
         <div className="relative flex items-center justify-center gap-4 sm:gap-6 md:gap-8 min-w-max">
 
           {/* Left Cards */}
-          {leftCards.map((card, idx) => (
-            <motion.div
-              key={`left-${idx}`}
-              initial={{ opacity: 0, x: -60, y: card.y }}
-              whileInView={{ opacity: 1, x: 0, y: card.y }}
-              viewport={{ once: true, margin: '-100px' }}
-              transition={{ duration: 0.8, delay: card.delay, ease: 'easeOut' }}
-              className="relative shrink-0 rounded-[20px] overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.10)] hover:shadow-[0_16px_48px_rgba(46,107,255,0.14)] transition-shadow duration-300"
-              style={{ width: card.width, height: card.height }}
-            >
-              <Image src={card.src} alt="Showcase" fill className="object-cover hover:scale-105 transition-transform duration-500" />
-            </motion.div>
-          ))}
+          <div className="flex items-center gap-4 sm:gap-6 md:gap-8">
+            {leftCards.map((card, idx) => (
+              <motion.div
+                key={`left-${idx}`}
+                initial={{ opacity: 0, x: -60, y: card.y }}
+                whileInView={{ opacity: 1, x: 0, y: card.y }}
+                viewport={{ once: true, margin: '-100px' }}
+                transition={{ duration: 0.8, delay: card.delay, ease: 'easeOut' }}
+                className="relative shrink-0 rounded-[24px] overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.10)] border border-black/5"
+                style={{ width: card.width, height: card.height }}
+              >
+                <Image
+                  src={card.src}
+                  alt="Showcase Work"
+                  fill
+                  className="object-cover"
+                  style={{
+                    transform: `scale(${card.scale || 1.15})`,
+                    objectPosition: card.position || 'center',
+                  }}
+                />
+              </motion.div>
+            ))}
+          </div>
 
           {/* Center Phone */}
           <motion.div
@@ -166,7 +175,7 @@ export default function Showcase() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.8, delay: 0.1, ease: 'easeOut' }}
-            className="relative shrink-0 w-[240px] md:w-[260px] h-[480px] md:h-[540px] bg-[#08152E] rounded-[48px] border-[8px] border-[#08152E] overflow-hidden flex flex-col z-20 mx-4 md:mx-6"
+            className="relative shrink-0 w-[230px] md:w-[260px] h-[460px] md:h-[530px] bg-[#08152E] rounded-[48px] border-[8px] border-[#08152E] overflow-hidden flex flex-col z-20 mx-2 md:mx-4"
           >
             {/* Phone Top Notch */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[140px] h-[30px] bg-[#08152E] rounded-b-[18px] z-30">
@@ -174,24 +183,35 @@ export default function Showcase() {
             </div>
 
             <div className="relative w-full h-full bg-black rounded-[40px] overflow-hidden">
-              <Image src="/images/temple_portrait.webp" alt="App Content" fill className="object-cover opacity-90 hover:opacity-100 transition-opacity duration-500" priority />
+              <Image src="/images/temple_portrait.webp" alt="App Content" fill className="object-cover" priority />
             </div>
           </motion.div>
 
           {/* Right Cards */}
-          {rightCards.map((card, idx) => (
-            <motion.div
-              key={`right-${idx}`}
-              initial={{ opacity: 0, x: 60, y: card.y }}
-              whileInView={{ opacity: 1, x: 0, y: card.y }}
-              viewport={{ once: true, margin: '-100px' }}
-              transition={{ duration: 0.8, delay: card.delay, ease: 'easeOut' }}
-              className="relative shrink-0 rounded-[20px] overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.10)] hover:shadow-[0_16px_48px_rgba(46,107,255,0.14)] transition-shadow duration-300"
-              style={{ width: card.width, height: card.height }}
-            >
-              <Image src={card.src} alt="Showcase" fill className="object-cover hover:scale-105 transition-transform duration-500" />
-            </motion.div>
-          ))}
+          <div className="flex items-center gap-4 sm:gap-6 md:gap-8">
+            {rightCards.map((card, idx) => (
+              <motion.div
+                key={`right-${idx}`}
+                initial={{ opacity: 0, x: 60, y: card.y }}
+                whileInView={{ opacity: 1, x: 0, y: card.y }}
+                viewport={{ once: true, margin: '-100px' }}
+                transition={{ duration: 0.8, delay: card.delay, ease: 'easeOut' }}
+                className="relative shrink-0 rounded-[24px] overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.10)] border border-black/5"
+                style={{ width: card.width, height: card.height }}
+              >
+                <Image
+                  src={card.src}
+                  alt="Showcase Work"
+                  fill
+                  className="object-cover"
+                  style={{
+                    transform: `scale(${card.scale || 1.15})`,
+                    objectPosition: card.position || 'center',
+                  }}
+                />
+              </motion.div>
+            ))}
+          </div>
 
         </div>
       </div>

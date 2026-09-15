@@ -66,7 +66,7 @@ const photographyPlans: Plan[] = [
 
 export default function PhotographyPricing({ hideHeader = false, hideCTA = false }: { hideHeader?: boolean, hideCTA?: boolean } = {}) {
   return (
-    <div className={`w-full bg-[#FAFAFA] text-slate-900 ${hideHeader ? 'pt-12' : 'pt-32'} pb-16 px-6 md:px-12 selection:bg-blue-600 selection:text-white`}>
+    <div className={`w-full bg-white text-slate-900 ${hideHeader ? 'pt-12' : 'pt-32'} pb-16 px-6 md:px-12 selection:bg-blue-600 selection:text-white`}>
       <div className="max-w-[1200px] mx-auto">
 
         {/* Header */}
