@@ -64,6 +64,17 @@ export const metadata: Metadata = {
   description: 'We shoot premium fashion lookbooks, high-volume e-commerce products, and corporate events globally. Boomerang Labs is dedicated to high-fidelity visual production.',
   keywords: ['commercial photography', 'fashion lookbook', 'model shoot', 'product photography', 'event photography', 'Boomerang Labs'],
   authors: [{ name: 'Boomerang Labs' }],
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
+  manifest: '/site.webmanifest',
   openGraph: {
     title: 'Boomerang Labs',
     description: 'We shoot premium fashion lookbooks, high-volume e-commerce products, and corporate events globally.',
